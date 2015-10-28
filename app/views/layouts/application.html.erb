@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Athena2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<img src="http://orig14.deviantart.net/20fb/f/2006/331/b/d/ottawa_olympics_2016_logo_by_kunan.png" width=50>
+	<% if user_signed_in? %>
+	<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+	<%end%>
+
+<%= yield %>
+
+</body>
+</html>
