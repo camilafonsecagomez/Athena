@@ -5,17 +5,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 
 
-"heroku needs:"
-group :production doc
-	gem 'thin'
-	gem 'rails_12factor' #required by heroku
-	gem 'pg'
-end
+#"heroku needs:"
+
+gem 'rails_12factor', group: :production #required by heroku
+gem 'pg', group: :production
 
 # Use sqlite3 as the database for Active Record
-group :development do
-	gem 'sqlite3'
-end
+gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 
 gem 'sass-rails', '~> 5.0'
