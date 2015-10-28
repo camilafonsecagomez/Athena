@@ -27,6 +27,16 @@
     <%= f.label :stock %><br>
     <%= f.number_field :stock %>
   </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+
+<div class="field">
+    <%= f.label :category %><br />
+    <%= collection_select(:item, :category_id, Category.all, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

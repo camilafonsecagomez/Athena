@@ -1,20 +1,43 @@
 <h1>Welcome User!</h1>
-<% if !user_signed_in? %>
-<%= link_to('Register', new_user_session_path) %>
- <%end%>
-<table>
-  <thead>
-    <tr>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-3"> Categories 
+    <table>
+          <thead>
+            <tr>
+              <th colspan="1"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= link_to item.name + " (" + number_to_currency(item.price) + ")", item %></td>
-      
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td><%= category.name %></td>
+              
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+  </div>
+  <div class="col-md-9"> 
+    <% if !user_signed_in? %>
+    <%= link_to('Register', new_user_session_path) %>
+     <%end%>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= link_to item.name + " (" + number_to_currency(item.price) + ")", item %></td>
+          
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
